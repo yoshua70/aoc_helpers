@@ -1,3 +1,5 @@
+// Package helpers provide helper method for the
+// Advent of Code challenge.
 package helpers
 
 import (
@@ -6,11 +8,13 @@ import (
 	"os"
 )
 
-func GetInput(file_path string) (*os.File, error) {
-	input, err := os.Open(file_path)
+// GetInput takes a path to a file and returns a pointer to that file.
+func GetInput(filePath string) (*os.File, error) {
+	input, err := os.Open(filePath)
 
 	if err != nil {
-		return nil, errors.New(fmt.Sprintf("Error while opening file at %s", file_path))
+		errorMsg := fmt.Sprintf("Error while opening file at %s", filePath)
+		return nil, errors.New(errorMsg)
 	}
 
 	return input, nil

@@ -4,4 +4,10 @@ A collection of helper function I used to solve challenges from Advent of Code (
 
 ## Helpers
 
-- GetInput: pass it the file path to the input.txt and get a pointer to the file.
+### GetInput
+
+```go
+func GetInput(filePath string) (*os.File, error)
+```
+
+GetInput takes a path to a file and returns a pointer to that file.
