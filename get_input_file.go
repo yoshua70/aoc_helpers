@@ -19,3 +19,14 @@ func GetInput(filePath string) (*os.File, error) {
 
 	return input, nil
 }
+
+func GetInputAsString(filePath string) (string, error) {
+	buf, err := os.ReadFile(filePath)
+
+	if err != nil {
+		errorMsg := fmt.Sprintf("Error while opening file at %s", filePath)
+		return "", errors.New(errorMsg)
+	}
+
+	return string(buf), nil
+}
